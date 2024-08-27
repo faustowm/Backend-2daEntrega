@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<main>
+    <section class="intro">
+        <h1>Bienvenido a Inzara Aromas</h1>
+        <p>En Inzara Aromas, te ofrecemos una amplia variedad de velas aromáticas y productos relacionados para
+            llenar tu espacio de aromas agradables y relajantes. Nuestro catálogo incluye desde velas artesanales
+            hasta fragancias exclusivas para que encuentres el producto perfecto que se ajuste a tus gustos y
+            necesidades.</p>
+        <p>Explora nuestras categorías para descubrir nuestras ofertas especiales y productos de alta calidad que
+            harán que cada rincón de tu hogar se llene de magia y frescura.</p>
+    </section>
+
+    <section class="products">
+        <h2>Nuestros Productos</h2>
+        {{#if productos.length}}
+        <ul class="productsContainer">
+            {{#each productos}}
+            <li class="product-item">
+                <h2>{{this.title}}</h2>
+                <p>{{this.description}}</p>
+                <p>Precio: ${{this.price}}</p>
+                <p>Stock: {{this.stock}}</p>
+                <img src="{{this.thumbnail}}" alt="{{this.title}}" class="product-image">
+            </li>
+            {{/each}}
+        </ul>
+        {{else}}
+        <p>No hay productos disponibles en este momento.</p>
+        {{/if}}
+    </section>
+</main>
+</body>
+
+</html>
